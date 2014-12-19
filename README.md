@@ -1,10 +1,10 @@
 # SROC
 
-SROC is a simple package for writing CORs services in Golang.
+SROC is a simple package for writing CORS services in Golang.
 
 ## Getting Started
 
-Create CORs Object.
+Create CORS handler.
 
 ```
     cors := sroc.Create(sroc.ANY_ORIGIN, sroc.ALL_METHODS)
