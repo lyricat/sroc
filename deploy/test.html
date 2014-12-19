@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Main</title>
+</head>
+<body>
+    <div class="container">
+    </div>    
+    <script src="jquery-2.0.3.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            url: "http://127.0.0.1:9876/echo?name=Mario",
+            contentType: "text/plain",
+            crossDomain: true,
+            success: function (data) {
+                console.log("GET", data);
+            }
+        })
+        $.ajax({
+            type: 'POST',
+            url: "http://127.0.0.1:9876/echo",
+            contentType: "application/x-www-form-urlencoded",
+            crossDomain: true,
+            data: {
+                name: "Mario"
+            },
+            success: function (data) {
+                console.log("POST", data);
+            }
+        })
+        $.ajax({
+            type: 'DELETE',
+            url: "http://127.0.0.1:9876/user/Mario",
+            contentType: "application/x-www-form-urlencoded",
+            crossDomain: true,
+            success: function (data) {
+                console.log("DELETE", data);
+            }
+        })
+    });
+    </script>
+</body>
+</html>
