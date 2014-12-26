@@ -44,7 +44,7 @@ func ServDel(r render.Render, params martini.Params) {
 }
 
 func main() {
-	cors := sroc.Create(sroc.ANY_ORIGIN, sroc.ALL_METHODS)
+	cors := sroc.Create(sroc.ANY_ORIGIN, sroc.ALL_METHODS, "X-Authorization, Authorization")
 	m := martini.Classic()
 	loadMidares(m)
 	initViews(cors, m)
