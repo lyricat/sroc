@@ -25,6 +25,7 @@ func Create(origin, methods, headers string) (sroc *CORS) {
 
 func (s *CORS) AllowCORS(res http.ResponseWriter) {
 	res.Header().Set("Access-Control-Allow-Origin", s.AllowOrigin)
+	res.Header().Set("Access-Control-Expose-Headers", s.AllowHeaders)
 }
 
 func (s *CORS) Preflighted(res http.ResponseWriter) {
